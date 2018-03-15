@@ -1,0 +1,16 @@
+version: "2"
+services:
+    product-service:
+        build: ./product-service 
+        ports:
+            - 9090:9090
+        volumes:
+            - ./product-service:/go/src/workshop-go-kit/product-service:cached   
+    graphql-servgateway:
+        build: ./graphql-gateway 
+        ports:
+            - 4000:4000
+        volumes:
+            - ./graphql-gateway:/go/src/workshop-go-kit/graph-gateway:cached
+        links:
+            - product-service

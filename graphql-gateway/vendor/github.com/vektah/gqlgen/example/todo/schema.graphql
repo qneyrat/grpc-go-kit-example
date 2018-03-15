@@ -1,0 +1,26 @@
+schema {
+	query: MyQuery
+	mutation: MyMutation
+}
+
+type MyQuery {
+	todo(id: Int!): Todo
+	lastTodo: Todo
+	todos: [Todo!]!
+}
+
+type MyMutation {
+	createTodo(todo: TodoInput!): Todo!
+	updateTodo(id: Int!, changes: Map!): Todo
+}
+
+type Todo {
+	id: Int!
+	text: String!
+	done: Boolean!
+}
+
+input TodoInput {
+	text: String!
+	done: Boolean
+}

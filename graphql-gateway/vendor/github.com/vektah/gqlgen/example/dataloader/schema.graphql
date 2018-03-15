@@ -1,0 +1,31 @@
+type Query {
+    customers: [Customer!]
+
+    # this method is here to test code generation of nested arrays
+    torture(customerIds: [[Int]]): [[Customer!]]
+}
+
+type Customer {
+    id: Int!
+    name: String!
+    address: Address
+    orders: [Order!]
+}
+
+type Address {
+    id: Int!
+    street: String!
+    country: String!
+}
+
+type Order {
+    id: Int!
+    date: Time!
+    amount: Float!
+    items: [Item!]
+}
+
+type Item {
+    name: String!
+}
+scalar Time

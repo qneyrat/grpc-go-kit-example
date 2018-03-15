@@ -1,0 +1,20 @@
+	{{- if .IsMarshaled }}
+	func Unmarshal{{ .GQLType }}(v interface{}) ({{.FullName}}, error) {
+		var it {{.FullName}}
+
+		for k, v := range v.(map[string]interface{}) {
+			switch k {
+			{{- range $field := .Fields }}
+			case {{$field.GQLName|quote}}:
+				var err error
+				{{ $field.Unmarshal (print "it." $field.GoVarName) "v" }}
+				if err != nil {
+					return it, err
+				}
+			{{- end }}
+			}
+		}
+
+		return it, nil
+	}
+	{{- end }}
