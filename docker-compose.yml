@@ -6,7 +6,7 @@ services:
             - 9090:9090
         volumes:
             - ./product-service:/go/src/workshop-go-kit/product-service:cached   
-    graphql-servgateway:
+    graphql-gateway:
         build: ./graphql-gateway 
         ports:
             - 4000:4000

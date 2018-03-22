@@ -1,9 +1,6 @@
 package client
 
 import (
-	"context"
-	"log"
-
 	"workshop-go-kit/graphql-gateway/pb"
 )
 
@@ -17,29 +14,13 @@ type ProductGRPCClient struct {
 }
 
 func (c *ProductGRPCClient) GetProduct(id int32) *pb.ProductResponse {
-	conn := c.Client.OpenConn()
-	defer conn.Close()
-
-	client := pb.NewProductClient(conn)
-	res, err := client.GetProduct(context.Background(), &pb.GetProductRequest{id})
-	if err != nil {
-		log.Fatalf("%v", err)
-	}
-
-	return res
+	//implement
+	return &pb.ProductResponse{0, "not implemented"}
 }
 
 func (c *ProductGRPCClient) CreateProduct(name string) *pb.ProductResponse {
-	conn := c.Client.OpenConn()
-	defer conn.Close()
-
-	client := pb.NewProductClient(conn)
-	res, err := client.CreateProduct(context.Background(), &pb.CreateProductRequest{name})
-	if err != nil {
-		log.Fatalf("%v", err)
-	}
-
-	return res
+	//implement
+	return &pb.ProductResponse{0, name}
 }
 
 func NewProductGRPCClient(host string) *ProductGRPCClient {
