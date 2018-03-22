@@ -1,0 +1,21 @@
+type Query {
+    user(id: ID!): User
+    search(input: SearchArgs = {location: "37,144"}): [User!]!
+}
+
+type User {
+    id: ID!
+    name: String!
+    created: Timestamp
+    location: Point
+    isBanned: Boolean!
+}
+
+input SearchArgs {
+    location: Point
+    createdAfter: Timestamp
+    isBanned: Boolean
+}
+
+scalar Timestamp
+scalar Point

@@ -1,1 +1,1 @@
-# Workshop Go & Micro-services
+# Workshop Go & Microservice
