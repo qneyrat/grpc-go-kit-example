@@ -1,8 +1,6 @@
 package product
 
 import (
-	"context"
-
 	"github.com/go-kit/kit/endpoint"
 )
 
@@ -25,20 +23,9 @@ type Endpoints struct {
 }
 
 func MakeGetProductEndpoint(svc Service) endpoint.Endpoint {
-	return func(ctx context.Context, req interface{}) (interface{}, error) {
-		gr := req.(GetProductRequest)
-		product, _ := svc.GetProduct(gr.ID)
-		return ProductResponse{product.ID, product.Name}, nil
-	}
+	return nil
 }
 
 func MakeCreateProductEndpoint(svc Service) endpoint.Endpoint {
-	return func(ctx context.Context, req interface{}) (interface{}, error) {
-		cr := req.(CreateProductRequest)
-		product, _ := svc.CreateProduct(cr.Name)
-		return ProductResponse{
-			product.ID,
-			product.Name,
-		}, nil
-	}
+	return nil
 }
