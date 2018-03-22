@@ -14,19 +14,13 @@ type GRPCServer struct {
 }
 
 func (s *GRPCServer) GetProduct(ctx context.Context, req *pb.GetProductRequest) (*pb.ProductResponse, error) {
-	_, resp, err := s.getProduct.ServeGRPC(ctx, req)
-	if err != nil {
-		return nil, err
-	}
-	return resp.(*pb.ProductResponse), nil
+	//implement
+	return nil, nil
 }
 
 func (s *GRPCServer) CreateProduct(ctx context.Context, req *pb.CreateProductRequest) (*pb.ProductResponse, error) {
-	_, resp, err := s.createProduct.ServeGRPC(ctx, req)
-	if err != nil {
-		return nil, err
-	}
-	return resp.(*pb.ProductResponse), nil
+	//implement
+	return nil, nil
 }
 
 func NewGRPCServer(_ context.Context, endpoint Endpoints) pb.ProductServer {
