@@ -1,1 +1,1 @@
-# Go & Microservice with go-kit and gRPC
+# go-kit and gRPC
