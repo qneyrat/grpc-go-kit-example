@@ -3,7 +3,7 @@ package graph
 import (
 	"context"
 
-	"workshop-go-kit/graphql-gateway/client"
+	"grpc-go-kit-example/graphql-gateway/client"
 )
 
 type App struct {

@@ -1,6 +1,6 @@
 package product
 
-import "workshop-go-kit/product-service/database"
+import "grpc-go-kit-example/product-service/database"
 
 type Service interface {
 	GetProduct(id int32) (*database.Product, error)

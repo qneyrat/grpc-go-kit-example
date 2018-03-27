@@ -5,7 +5,7 @@ import (
 
 	gt "github.com/go-kit/kit/transport/grpc"
 
-	"workshop-go-kit/product-service/pb"
+	"grpc-go-kit-example/product-service/pb"
 )
 
 type GRPCServer struct {

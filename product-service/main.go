@@ -7,9 +7,9 @@ import (
 
 	"google.golang.org/grpc"
 
-	"workshop-go-kit/product-service/database"
-	"workshop-go-kit/product-service/pb"
-	"workshop-go-kit/product-service/product"
+	"grpc-go-kit-example/product-service/database"
+	"grpc-go-kit-example/product-service/pb"
+	"grpc-go-kit-example/product-service/product"
 )
 
 func main() {

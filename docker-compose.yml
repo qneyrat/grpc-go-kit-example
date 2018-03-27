@@ -5,12 +5,12 @@ services:
         ports:
             - 9090:9090
         volumes:
-            - ./product-service:/go/src/workshop-go-kit/product-service:cached   
+            - ./product-service:/go/src/grpc-go-kit-example/product-service:cached
     graphql-gateway:
         build: ./graphql-gateway 
         ports:
             - 4000:4000
         volumes:
-            - ./graphql-gateway:/go/src/workshop-go-kit/graph-gateway:cached
+            - ./graphql-gateway:/go/src/grpc-go-kit-example/graph-gateway:cached
         links:
             - product-service

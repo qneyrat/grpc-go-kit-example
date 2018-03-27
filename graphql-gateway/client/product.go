@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"workshop-go-kit/graphql-gateway/pb"
+	"grpc-go-kit-example/graphql-gateway/pb"
 )
 
 type ProductClient interface {

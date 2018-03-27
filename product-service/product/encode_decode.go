@@ -3,7 +3,7 @@ package product
 import (
 	"context"
 
-	"workshop-go-kit/product-service/pb"
+	"grpc-go-kit-example/product-service/pb"
 )
 
 func EncodeProductResponse(_ context.Context, r interface{}) (interface{}, error) {
